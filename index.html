@@ -151,6 +151,32 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
 .card-chip { position: absolute; top: -10px; right: -10px; background: var(--green); color: var(--white); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px; white-space: nowrap; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 
+/* ── POSTCARD MOCKUP — clean rebuild ── */
+.card-mockup { width: 100%; max-width: 400px; background: #1a1a1a; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); transform: rotate(1.5deg); transition: transform var(--transition); position: relative; }
+.card-mockup:hover { transform: rotate(0deg) scale(1.02); }
+.card-top-banner { background: linear-gradient(135deg,#0A2A6B 0%,#1A4A9B 100%); padding: 0.7rem 1rem; text-align: center; }
+.card-top-banner .ctb-l1 { display: block; font-size: 0.62rem; font-weight: 800; color: #F5A623; letter-spacing: 0.08em; text-transform: uppercase; }
+.card-top-banner .ctb-l2 { display: block; font-size: 0.5rem; font-weight: 600; color: #fff; letter-spacing: 0.04em; margin-top: 3px; }
+.card-bot-banner { background: linear-gradient(135deg,#1A4A9B 0%,#0A2A6B 100%); padding: 0.6rem 1rem; text-align: center; }
+.card-bot-banner span { font-size: 0.5rem; font-weight: 600; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
+.card-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.card-row-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-top: 2px; }
+.ad-gold { padding: 9px 8px; min-height: 90px; display: flex; flex-direction: column; gap: 2px; position: relative; }
+.ad-gold-a { background: linear-gradient(135deg,#F5D97A 0%,#F0C040 60%,#E8B820 100%); }
+.ad-gold-b { background: linear-gradient(135deg,#F0C040 0%,#E8B820 60%,#D4A010 100%); }
+.ag-biz { font-size: 0.38rem; font-weight: 700; color: #1A1A1A; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
+.ag-offer { font-size: 0.5rem; font-weight: 800; color: #0A2A6B; line-height: 1.2; margin-top: 2px; }
+.ag-detail { font-size: 0.32rem; font-weight: 400; color: #2C2C2C; line-height: 1.45; margin-top: 3px; }
+.ag-cta { font-size: 0.32rem; font-weight: 700; color: #0A2A6B; margin-top: auto; padding-top: 4px; }
+.ag-reserved { position: absolute; top: 4px; right: 4px; font-size: 0.27rem; font-weight: 700; background: rgba(0,0,0,0.12); color: #1A1A1A; padding: 1px 4px; border-radius: 100px; text-transform: uppercase; }
+.ad-slate { padding: 7px 6px; min-height: 70px; display: flex; flex-direction: column; gap: 2px; }
+.ad-slate-a { background: linear-gradient(135deg,#4A5568 0%,#2D3748 100%); }
+.ad-slate-b { background: linear-gradient(135deg,#3D4A5C 0%,#2A3545 100%); }
+.as-biz { font-size: 0.34rem; font-weight: 700; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
+.as-offer { font-size: 0.4rem; font-weight: 700; color: #fff; line-height: 1.2; margin-top: 1px; }
+.as-detail { font-size: 0.29rem; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.4; margin-top: 2px; }
+.as-cta { font-size: 0.28rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-top: auto; padding-top: 2px; }
+
 /* MARQUEE */
 .marquee-bar { background: var(--ink); padding: 1rem 0; overflow: hidden; white-space: nowrap; }
 .marquee-track { display: inline-flex; gap: 2.5rem; animation: marquee 30s linear infinite; }
@@ -418,29 +444,53 @@ footer { background: var(--ink); padding: 4rem 0 0; }
   </div>
   <div class="hero-visual">
     <div class="card-mockup">
-      <div class="card-banner top" style="background:linear-gradient(135deg,#0A2A6B 0%,#1A4A9B 100%);padding:0.6rem 1rem"><span style="display:block;font-size:0.62rem;font-weight:800;color:#F5A623;letter-spacing:0.08em;text-transform:uppercase">EXCLUSIVE West Hartford OFFERS JUST FOR YOU</span><span style="display:block;font-size:0.52rem;font-weight:600;color:#fff;letter-spacing:0.04em;margin-top:2px">Trusted Local Businesses &bull; Savings &bull; Services &bull; Dining &amp; More!</span></div>
-      <div class="card-grid-real" style="grid-template-rows:auto auto">
-
-        <div class="ad-slot gold-grad-1" style="min-height:88px">
-          <div class="ad-biz">West Hartford Realty</div>
-          <div class="ad-offer">Thinking of Selling?</div>
-          <div class="ad-detail">Top dollar results, fast closings<br>Serving CT homeowners since 2003</div>
-          <div class="ad-cta">Free home valuation &rarr;</div>
-        </div>
-
-        <div class="ad-slot gold-grad-2" style="min-height:88px;position:relative">
-          <div class="ad-biz">CCJR Junk Removal</div>
-          <div class="ad-offer">$50 OFF Any Cleanout</div>
-          <div class="ad-detail">Same-day service available<br>Licensed &amp; insured &bull; CT</div>
-          <div class="ad-cta">Call 203-555-0100</div>
-          <div class="ad-reserved" style="background:rgba(0,0,0,0.15);color:#2C2C2C">&#10003; Reserved</div>
-        </div>
-
-        <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:2px"><div class="ad-slot slate-1"><div class="ad-biz">Summit Roofing CT</div><div class="ad-offer">Free Inspection</div><div class="ad-detail">GAF certified<br>Storm specialists</div><div class="ad-cta">summitroofingct.com</div></div><div class="ad-slot slate-2"><div class="ad-biz">Classic Cuts</div><div class="ad-offer">$10 OFF 1st Visit</div><div class="ad-detail">Walk-ins welcome<br>Mon–Sat 9–7pm</div><div class="ad-cta">Book online</div></div><div class="ad-slot slate-3"><div class="ad-biz">Trattoria Bella</div><div class="ad-offer">$20 OFF Dinner</div><div class="ad-detail">Authentic Italian<br>Open Tue–Sun</div><div class="ad-cta">Reserve a table</div></div><div class="ad-slot slate-4"><div class="ad-biz">Glow Med Spa</div><div class="ad-offer">20% OFF Botox</div><div class="ad-detail">Board-certified<br>West Hartford</div><div class="ad-cta">glowmedspa.com</div></div></div>
-
-      </div>
-      <div class="card-banner bottom" style="background:linear-gradient(135deg,#1A4A9B 0%,#0A2A6B 100%)"><span>Scan QR Codes for Exclusive Offers &mdash; Delivered to Your Door</span></div>
       <div class="card-chip">West Hartford Spring Mailer</div>
+      <div class="card-top-banner">
+        <span class="ctb-l1">EXCLUSIVE West Hartford OFFERS JUST FOR YOU</span>
+        <span class="ctb-l2">Trusted Local Businesses &bull; Savings &bull; Services &bull; Dining &amp; More!</span>
+      </div>
+      <div class="card-row-2">
+        <div class="ad-gold ad-gold-a">
+          <div class="ag-biz">West Hartford Realty</div>
+          <div class="ag-offer">Thinking of Selling?</div>
+          <div class="ag-detail">Top dollar, fast closings<br>Serving CT since 2003</div>
+          <div class="ag-cta">Free home valuation &rarr;</div>
+        </div>
+        <div class="ad-gold ad-gold-b">
+          <div class="ag-biz">CCJR Junk Removal</div>
+          <div class="ag-offer">$50 OFF Any Cleanout</div>
+          <div class="ag-detail">Same-day service available<br>Licensed &amp; insured &bull; CT</div>
+          <div class="ag-cta">Call 203-555-0100</div>
+          <div class="ag-reserved">&#10003; Reserved</div>
+        </div>
+      </div>
+      <div class="card-row-4">
+        <div class="ad-slate ad-slate-a">
+          <div class="as-biz">Summit Roofing</div>
+          <div class="as-offer">Free Inspection</div>
+          <div class="as-detail">GAF certified<br>Storm specialists</div>
+          <div class="as-cta">summitroofingct.com</div>
+        </div>
+        <div class="ad-slate ad-slate-b">
+          <div class="as-biz">Classic Cuts</div>
+          <div class="as-offer">$10 OFF 1st Visit</div>
+          <div class="as-detail">Walk-ins welcome<br>Mon&ndash;Sat 9&ndash;7pm</div>
+          <div class="as-cta">Book online</div>
+        </div>
+        <div class="ad-slate ad-slate-a">
+          <div class="as-biz">Trattoria Bella</div>
+          <div class="as-offer">$20 OFF Dinner</div>
+          <div class="as-detail">Authentic Italian<br>Open Tue&ndash;Sun</div>
+          <div class="as-cta">Reserve a table</div>
+        </div>
+        <div class="ad-slate ad-slate-b">
+          <div class="as-biz">Glow Med Spa</div>
+          <div class="as-offer">20% OFF Botox</div>
+          <div class="as-detail">Board-certified<br>West Hartford</div>
+          <div class="as-cta">glowmedspa.com</div>
+        </div>
+      </div>
+      <div class="card-bot-banner"><span>Scan QR Codes for Exclusive Offers &mdash; Delivered to Your Door</span></div>
     </div>
   </div>
 </section>
