@@ -1,1186 +1,963 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bright Climb Mail — Connecticut Direct Mail Marketing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bright Climb Mail — Premium Direct Mail for Connecticut Businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root {
-    --forest:   #063D30;
-    --green:    #0F6E56;
-    --mid:      #1D9E75;
-    --teal:     #5DCAA5;
-    --light:    #E1F5EE;
-    --cream:    #F7F5F0;
-    --orange:   #C94F1A;
-    --orange-l: #F5E8E1;
-    --ink:      #1A1A18;
-    --muted:    #5A5A54;
-    --border:   #D8D5CC;
-    --white:    #FFFFFF;
-  }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:      #0D0D0D;
+  --ink-2:    #2C2C2C;
+  --ink-3:    #4A4A4A;
+  --ink-4:    #7A7A7A;
+  --paper:    #FAFAF8;
+  --white:    #FFFFFF;
+  --border:   #E6E6E2;
+  --green:    #0A5C45;
+  --green-m:  #1A8A68;
+  --green-l:  #EBF5F1;
+  --teal:     #2ABFAF;
+  --orange:   #C94F1A;
+  --orange-l: #FAF0EB;
+  --red:      #B91C1C;
+  --navy:     #1A3A5C;
+  --sage:     #4A8C72;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.09);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+  --transition: 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+html { scroll-behavior: smooth; }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* BASE — increased body font size for readability */
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--paper); color: var(--ink); font-size: 18px; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
 
-  html { scroll-behavior: smooth; }
+/* SECTION LABELS — increased font size */
+.section-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; }
+.section-label.green { color: var(--green); }
+.section-label.white { color: rgba(255,255,255,0.75); }
+.section-label.centered { justify-content: center; }
+.section-title { font-size: clamp(2.6rem, 4.5vw, 4rem); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.25rem; }
+.section-title.white { color: var(--white); }
+.section-title.centered { text-align: center; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    overflow-x: hidden;
-  }
+/* SECTION BODY — larger, more readable copy */
+.section-body { font-size: 1.15rem; font-weight: 300; color: var(--ink-3); line-height: 1.85; max-width: 580px; }
+.section-body.white-muted { color: rgba(255,255,255,0.8); max-width: 520px; }
+.section-body.centered { text-align: center; }
+.section-body.mxauto { margin-left: auto; margin-right: auto; }
+.section-body.mt { margin-top: 1rem; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(6,61,48,0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(93,202,165,0.15);
-    padding: 0 5%;
-    height: 64px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    color: var(--white);
-    letter-spacing: 0.01em;
-  }
-  .nav-logo span { color: var(--teal); }
-  .nav-links { display: flex; gap: 2rem; align-items: center; }
-  .nav-links a {
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--teal); }
-  .nav-cta {
-    background: var(--orange) !important;
-    color: var(--white) !important;
-    padding: 0.5rem 1.25rem;
-    border-radius: 4px;
-    font-weight: 500 !important;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: #a83f12 !important; }
+/* BUTTONS */
+.btn-pill { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.9rem 2rem; border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: 0.01em; transition: all var(--transition); cursor: pointer; border: none; }
+.btn-dark { background: var(--ink); color: var(--white); }
+.btn-dark:hover { background: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,92,69,0.3); }
+.btn-white { background: var(--white); color: var(--green); }
+.btn-white:hover { background: var(--green-l); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+.btn-outline:hover { background: var(--green); color: var(--white); border-color: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,92,69,0.25); }
+.btn-outline-dark { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.btn-outline-dark:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+.full-w { width: 100%; margin-top: 1.5rem; }
+.mt-btn { margin-top: 2rem; display: inline-flex; }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--forest);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 64px 0 0;
-    position: relative;
-    overflow: hidden;
-  }
+/* NAV */
+#navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(250,250,248,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
+#navbar.scrolled { box-shadow: var(--shadow-sm); }
+.nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.nav-logo span { color: var(--green); }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { font-size: 0.9rem; font-weight: 400; color: var(--ink-3); transition: color var(--transition); white-space: nowrap; }
+.nav-links a:hover { color: var(--ink); }
+.nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--ink); padding: 0.25rem; }
+.nav-drawer { display: none; flex-direction: column; gap: 0; padding: 0 24px 16px; background: var(--white); border-top: 1px solid var(--border); }
+.nav-drawer.open { display: flex; }
+.drawer-link { font-size: 1.05rem; font-weight: 400; color: var(--ink-2); padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.drawer-cta { margin-top: 1.25rem; text-align: center; }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -200px; right: -200px;
-    width: 700px; height: 700px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(29,158,117,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
+/* HERO */
+.hero { min-height: 100vh; padding: 100px 24px 80px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; max-width: 1160px; margin: 0 auto; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); background: var(--green-l); border: 1px solid rgba(10,92,69,0.2); padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem; width: fit-content; animation: fadeUp 0.6s 0.1s both; }
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero-h1 { font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 500; line-height: 1.08; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1.5rem; animation: fadeUp 0.7s 0.15s both; }
+.hero-sub { font-size: 1.15rem; font-weight: 300; color: var(--ink-3); line-height: 1.8; max-width: 480px; margin-bottom: 2.5rem; animation: fadeUp 0.7s 0.25s both; }
+.hero-actions { display: flex; gap: 0.875rem; flex-wrap: wrap; margin-bottom: 3.5rem; animation: fadeUp 0.7s 0.35s both; }
+.hero-stats { display: flex; align-items: center; gap: 2.5rem; animation: fadeUp 0.7s 0.45s both; }
 
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -100px; left: 20%;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(93,202,165,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
+/* Hero stat number — teal color for 5,000+ */
+.hstat-n { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--ink); line-height: 1; margin-bottom: 0.25rem; }
+.hstat-n sup { font-size: 0.9rem; }
+.hstat-n.teal { color: var(--teal); }
+.hstat-l { font-size: 0.78rem; color: var(--ink-4); letter-spacing: 0.05em; text-transform: uppercase; }
+.hstat-divider { width: 1px; height: 36px; background: var(--border); }
+.hero-visual { display: flex; justify-content: center; align-items: center; animation: fadeUp 0.8s 0.4s both; }
+.card-mockup { width: 100%; max-width: 380px; background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); transform: rotate(1.5deg); transition: transform var(--transition); position: relative; }
+.card-mockup:hover { transform: rotate(0deg) scale(1.02); }
+.card-banner { background: var(--orange); padding: 0.75rem 1rem; text-align: center; }
+.card-banner span { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); }
+.card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; background: var(--ink); padding: 3px; }
+/* Realistic postcard ad grid - updated color scheme */
+.card-grid-real { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #1a1a1a; padding: 2px; }
+.ad-slot { padding: 7px 6px; display: flex; flex-direction: column; gap: 2px; position: relative; min-height: 80px; }
+.slate-1,.slate-2,.slate-3,.slate-4 { grid-column: auto; }
 
-  /* Subtle grid texture */
-  .hero-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(93,202,165,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(93,202,165,0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-    pointer-events: none;
-  }
+/* Top row - 2 wide gold/yellow gradient slots */
+.gold-grad-1 { background: linear-gradient(135deg, #F5D97A 0%, #F0C040 50%, #E8B820 100%); grid-column: span 2; }
+.gold-grad-2 { background: linear-gradient(135deg, #F0C040 0%, #E8B820 50%, #D4A010 100%); grid-column: span 2; }
 
-  .hero-left {
-    padding: 6rem 4rem 6rem 8%;
-    position: relative; z-index: 2;
-  }
+/* Bottom row - 4 dark slate slots */
+.slate-1 { background: linear-gradient(135deg, #4A5568 0%, #2D3748 100%); }
+.slate-2 { background: linear-gradient(135deg, #3D4A5C 0%, #2A3545 100%); }
+.slate-3 { background: linear-gradient(135deg, #4A5568 0%, #2D3748 100%); }
+.slate-4 { background: linear-gradient(135deg, #3D4A5C 0%, #2A3545 100%); }
 
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal);
-    background: rgba(93,202,165,0.1);
-    border: 1px solid rgba(93,202,165,0.25);
-    padding: 0.4rem 0.875rem;
-    border-radius: 100px;
-    margin-bottom: 1.75rem;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.1s forwards;
-  }
-  .eyebrow-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--teal);
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-  }
+.ad-biz  { font-size: 0.38rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
+.gold-grad-1 .ad-biz, .gold-grad-2 .ad-biz { color: #1A1A1A; }
+.slate-1 .ad-biz, .slate-2 .ad-biz, .slate-3 .ad-biz, .slate-4 .ad-biz { color: rgba(255,255,255,0.95); }
 
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 4vw, 3.75rem);
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.2s forwards;
-  }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--teal);
-    position: relative;
-  }
-  .hero h1 em::after {
-    content: '';
-    position: absolute;
-    bottom: 2px; left: 0; right: 0;
-    height: 2px;
-    background: var(--teal);
-    opacity: 0.4;
-  }
+.ad-offer{ font-size: 0.48rem; font-weight: 700; line-height: 1.2; margin-top: 2px; }
+.gold-grad-1 .ad-offer, .gold-grad-2 .ad-offer { color: #0A3A6B; }
+.slate-1 .ad-offer, .slate-2 .ad-offer, .slate-3 .ad-offer, .slate-4 .ad-offer { color: #FFFFFF; }
 
-  .hero-sub {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.7;
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.3s forwards;
-  }
+.ad-detail{ font-size: 0.33rem; font-weight: 400; line-height: 1.4; margin-top: 3px; }
+.gold-grad-1 .ad-detail, .gold-grad-2 .ad-detail { color: #2C2C2C; }
+.slate-1 .ad-detail, .slate-2 .ad-detail, .slate-3 .ad-detail, .slate-4 .ad-detail { color: rgba(255,255,255,0.75); }
 
-  .hero-actions {
-    display: flex; gap: 1rem; align-items: center;
-    opacity: 0;
-    animation: fadeUp 0.6s 0.4s forwards;
-  }
-  .btn-primary {
-    background: var(--orange);
-    color: var(--white);
-    padding: 0.875rem 2rem;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    letter-spacing: 0.01em;
-    transition: all 0.2s;
-    border: 2px solid var(--orange);
-    display: inline-block;
-  }
-  .btn-primary:hover {
-    background: #a83f12;
-    border-color: #a83f12;
-    transform: translateY(-1px);
-  }
-  .btn-ghost {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-decoration: none;
-    display: flex; align-items: center; gap: 0.4rem;
-    transition: color 0.2s;
-  }
-  .btn-ghost:hover { color: var(--teal); }
-  .btn-ghost::after { content: '→'; }
+.ad-cta  { font-size: 0.32rem; font-weight: 600; margin-top: auto; padding-top: 3px; letter-spacing: 0.02em; }
+.gold-grad-1 .ad-cta, .gold-grad-2 .ad-cta { color: #0A3A6B; }
+.slate-1 .ad-cta, .slate-2 .ad-cta, .slate-3 .ad-cta, .slate-4 .ad-cta { color: rgba(255,255,255,0.85); }
 
-  .hero-stats {
-    display: flex; gap: 2rem;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    opacity: 0;
-    animation: fadeUp 0.6s 0.5s forwards;
-  }
-  .stat-item { }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1;
-  }
-  .stat-num span { color: var(--teal); }
-  .stat-label {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.45);
-    margin-top: 0.3rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+.ad-reserved { position: absolute; top: 4px; right: 4px; font-size: 0.28rem; font-weight: 700; background: rgba(255,255,255,0.25); color: #fff; padding: 1px 4px; border-radius: 100px; letter-spacing: 0.04em; text-transform: uppercase; }
+.gold-grad-1 .ad-reserved { background: rgba(0,0,0,0.15); color: #1A1A1A; }
 
-  /* Hero right — card mockup */
-  .hero-right {
-    padding: 6rem 8% 6rem 2rem;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; z-index: 2;
-    opacity: 0;
-    animation: fadeIn 0.8s 0.5s forwards;
-  }
+.card-slot { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px; }
+.card-slot span { font-size: 0.52rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.9); }
+.card-slot.navy { background: var(--navy); }
+.card-slot.sage { background: var(--sage); }
+.card-slot.filled { background: var(--orange); }
+.card-chip { position: absolute; top: -10px; right: -10px; background: var(--green); color: var(--white); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px; white-space: nowrap; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 
-  .card-mockup {
-    width: 100%;
-    max-width: 380px;
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,0.08),
-      0 32px 80px rgba(0,0,0,0.5),
-      0 8px 24px rgba(0,0,0,0.3);
-    transform: rotate(2deg);
-    transition: transform 0.4s;
-  }
-  .card-mockup:hover { transform: rotate(0deg) scale(1.02); }
+/* MARQUEE */
+.marquee-bar { background: var(--ink); padding: 1rem 0; overflow: hidden; white-space: nowrap; }
+.marquee-track { display: inline-flex; gap: 2.5rem; animation: marquee 30s linear infinite; }
+.marquee-track span { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.marquee-track span.dot { color: var(--green-m); font-size: 0.5rem; }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-  .card-top-banner {
-    background: var(--orange);
-    padding: 0.75rem 1rem;
-    text-align: center;
-  }
-  .card-top-banner p {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--white);
-    line-height: 1.4;
-  }
+/* SECTIONS */
+section { padding: 6rem 0; }
 
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
-    padding: 3px;
-    background: var(--ink);
-  }
-  .card-slot {
-    aspect-ratio: 1;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.6rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-  }
-  .card-slot.navy { background: #185FA5; }
-  .card-slot.teal-s { background: #1D9E75; }
-  .card-slot.filled {
-    background: var(--orange);
-    font-size: 0.5rem;
-  }
-  .card-slot-inner {
-    text-align: center;
-    padding: 4px;
-    line-height: 1.3;
-  }
+/* PROBLEM */
+.problem { background: var(--white); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.col-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+.problem-card { padding: 1.75rem; border-radius: var(--radius-md); border: 1.5px solid var(--border); }
+.problem-card.bad { background: #FFF5F5; border-color: #FFD5D5; }
+.problem-card.good { background: var(--green-l); border-color: rgba(10,92,69,0.2); }
+.problem-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.problem-label { font-size: 1rem; font-weight: 600; color: var(--ink-2); margin-bottom: 0.75rem; }
+.problem-list { list-style: none; }
+.problem-list li { font-size: 1rem; font-weight: 300; color: var(--ink-3); padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); display: flex; gap: 0.5rem; align-items: flex-start; }
+.problem-list li:last-child { border-bottom: none; }
+.problem-card.bad .problem-list li::before { content: '✕'; color: #C94F1A; flex-shrink: 0; }
+.problem-card.good .problem-list li::before { content: '✓'; color: var(--green); flex-shrink: 0; }
 
-  .card-bottom-banner {
-    background: var(--forest);
-    padding: 0.6rem 1rem;
-    text-align: center;
-    border-top: 2px solid var(--teal);
-  }
-  .card-bottom-banner p {
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--teal);
-    text-transform: uppercase;
-  }
+/* HOW IT WORKS */
+.how { background: var(--paper); }
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); border-radius: var(--radius-xl); overflow: hidden; margin-top: 3.5rem; }
+.step-card { background: var(--white); padding: 2.5rem 2rem; transition: background var(--transition); }
+.step-card:hover { background: var(--green-l); }
+/* Higher contrast step numbers */
+.step-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 600; color: var(--ink-2); line-height: 1; margin-bottom: 1.25rem; transition: color var(--transition); }
+.step-card:hover .step-num { color: var(--green); }
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
+.step-body { font-size: 1rem; font-weight: 300; color: var(--ink-3); line-height: 1.8; }
 
-  .card-label {
-    position: absolute;
-    top: -24px; right: -24px;
-    background: var(--teal);
-    color: var(--forest);
-    font-size: 0.6rem;
-    font-weight: 700;
-    padding: 0.3rem 0.75rem;
-    border-radius: 100px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .mockup-wrap {
-    position: relative;
-    padding-top: 2rem;
-  }
+/* EXCLUSIVITY */
+.exclusivity { background: var(--green); padding: 6rem 0; }
+.excl-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.excl-visual { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-lg); padding: 2rem; }
+/* Campaign note in white */
+.excl-note { margin-top: 1rem; font-size: 0.82rem; color: var(--white); letter-spacing: 0.06em; text-transform: uppercase; text-align: right; font-weight: 500; }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
+/* SLOT ITEMS */
+.slot-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.9rem 1rem; border-radius: 10px; margin-bottom: 6px; font-size: 1rem; font-weight: 400; cursor: default; transition: all 0.2s ease; border: 1.5px solid transparent; }
+.slot-item.open { background: rgba(255,255,255,0.12); color: var(--white); border-color: rgba(255,255,255,0.2); }
+.slot-item.open:hover { background: rgba(26,138,104,0.4); border-color: rgba(255,255,255,0.5); transform: translateX(4px); }
+.slot-item.reserved { background: rgba(185,28,28,0.25); color: rgba(255,255,255,0.7); border-color: rgba(185,28,28,0.5); cursor: not-allowed; }
+.slot-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.slot-item.open .slot-dot { background: rgba(255,255,255,0.6); }
+.slot-item.open:hover .slot-dot { background: #5DCAA5; }
+.slot-item.reserved .slot-dot { background: #F87171; }
+.slot-name { flex: 1; }
+.slot-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; white-space: nowrap; }
+.slot-item.open .slot-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); }
+.slot-item.open:hover .slot-tag { background: rgba(93,202,165,0.25); color: #5DCAA5; }
+.slot-item.reserved .slot-tag { background: rgba(185,28,28,0.4); color: #FCA5A5; }
 
-  /* ── SECTIONS SHARED ── */
-  section { padding: 6rem 8%; }
-  .section-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 0.875rem;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3vw, 2.75rem);
-    font-weight: 700;
-    color: var(--forest);
-    line-height: 1.15;
-    margin-bottom: 1rem;
-  }
-  .section-sub {
-    font-size: 1rem;
-    color: var(--muted);
-    line-height: 1.7;
-    max-width: 560px;
-    font-weight: 300;
-  }
+/* PRICING */
+.pricing { background: var(--white); }
+.price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 3.5rem; }
+.price-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 1.75rem; position: relative; transition: all var(--transition); display: flex; flex-direction: column; }
+.price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--green); }
+.price-card.featured { background: var(--ink); border-color: var(--ink); }
+.price-card.featured:hover { border-color: var(--green); }
+.featured-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--orange); color: var(--white); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.875rem; border-radius: 100px; white-space: nowrap; }
+.price-tier { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 0.75rem; }
+.price-card.featured .price-tier { color: rgba(255,255,255,0.4); }
+.price-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+.price-card.featured .price-name { color: var(--white); }
+.price-desc { font-size: 0.95rem; font-weight: 300; color: var(--ink-3); line-height: 1.65; margin-bottom: 1.5rem; }
+.price-card.featured .price-desc { color: rgba(255,255,255,0.6); }
+.price-amount { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: var(--ink); line-height: 1; margin-bottom: 0.35rem; }
+.price-card.featured .price-amount { color: var(--white); }
+.price-per { font-size: 0.8rem; color: var(--ink-4); margin-bottom: 1.75rem; }
+.price-card.featured .price-per { color: rgba(255,255,255,0.35); }
+.price-features { list-style: none; border-top: 1px solid var(--border); padding-top: 1.25rem; margin-bottom: 1.5rem; flex: 1; }
+.price-card.featured .price-features { border-color: rgba(255,255,255,0.1); }
+.price-features li { font-size: 0.95rem; font-weight: 300; color: var(--ink-3); padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.55; }
+.price-features li:last-child { border-bottom: none; }
+.price-card.featured .price-features li { color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.08); }
+.price-features li::before { content: '✓'; color: var(--green); font-size: 0.8rem; flex-shrink: 0; margin-top: 2px; }
+.price-card.featured .price-features li::before { color: rgba(255,255,255,0.5); }
 
-  /* ── HOW IT WORKS ── */
-  .how { background: var(--white); }
-  .how-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    margin-top: 3.5rem;
-    background: var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .how-step {
-    background: var(--white);
-    padding: 2.5rem 1.75rem;
-    position: relative;
-    transition: background 0.25s;
-  }
-  .how-step:hover { background: var(--cream); }
-  .step-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--teal);
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-  .step-icon {
-    width: 40px; height: 40px;
-    background: var(--light);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-  .step-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--forest);
-    margin-bottom: 0.6rem;
-  }
-  .step-body {
-    font-size: 1rem;
-    color: var(--muted);
-    line-height: 1.65;
-    font-weight: 300;
-  }
+/* INCLUDED */
+.included { background: var(--paper); }
+.included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 3.5rem; }
+.included-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 1.75rem 1.5rem; transition: all var(--transition); }
+.included-item:hover { border-color: var(--green); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.inc-icon { font-size: 1.5rem; margin-bottom: 0.875rem; }
+.inc-label { font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+.inc-body { font-size: 0.95rem; font-weight: 300; color: var(--ink-3); line-height: 1.75; }
 
-  /* ── PRICING ── */
-  .pricing { background: var(--cream); }
-  .pricing-header { max-width: 600px; margin-bottom: 3.5rem; }
+/* WHO IT'S FOR — no green highlight on hot tags */
+.whofor { background: var(--white); }
+.niche-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 3rem; justify-content: center; }
+.ntag { font-size: 0.95rem; font-weight: 400; padding: 0.55rem 1.1rem; border-radius: 100px; border: 1.5px solid var(--border); color: var(--ink-3); background: var(--paper); transition: all var(--transition); cursor: default; }
+.ntag:hover { border-color: var(--green); color: var(--green); background: var(--green-l); }
+.ntag.hot { background: var(--paper); border-color: var(--border); color: var(--ink-3); }
+.ntag.reserved-tag { background: #FEF2F2; border-color: #FCA5A5; color: #B91C1C; cursor: default; font-weight: 500; }
 
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  .price-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2rem 1.75rem;
-    position: relative;
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-  .price-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(6,61,48,0.1);
-  }
-  .price-card.featured {
-    background: var(--forest);
-    border-color: var(--forest);
-  }
-  .price-badge {
-    position: absolute;
-    top: -12px; left: 50%; transform: translateX(-50%);
-    background: var(--orange);
-    color: var(--white);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.875rem;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-  .price-tier {
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 0.5rem;
-  }
-  .price-card.featured .price-tier { color: var(--teal); }
-  .price-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--forest);
-    margin-bottom: 0.25rem;
-  }
-  .price-card.featured .price-name { color: var(--white); }
-  .price-desc {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-    line-height: 1.5;
-  }
-  .price-card.featured .price-desc { color: rgba(255,255,255,0.6); }
-  .price-amount {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--forest);
-    line-height: 1;
-    margin-bottom: 0.25rem;
-  }
-  .price-card.featured .price-amount { color: var(--white); }
-  .price-per {
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-bottom: 1.75rem;
-  }
-  .price-card.featured .price-per { color: rgba(255,255,255,0.5); }
-  .price-features { list-style: none; }
-  .price-features li {
-    font-size: 0.85rem;
-    color: var(--muted);
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: flex-start; gap: 0.6rem;
-    font-weight: 300;
-    line-height: 1.4;
-  }
-  .price-card.featured .price-features li { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1); }
-  .price-features li:last-child { border-bottom: none; }
-  .price-features li::before {
-    content: '✓';
-    color: var(--mid);
-    font-weight: 700;
-    font-size: 0.75rem;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .price-card.featured .price-features li::before { color: var(--teal); }
+/* UPSELLS */
+.upsells { background: var(--paper); }
+.upsell-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 3.5rem; }
+.upsell-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 2rem 1.75rem; transition: all var(--transition); }
+.upsell-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--green); }
+.upsell-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+.upsell-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--ink); margin-bottom: 0.6rem; }
+.upsell-body { font-size: 0.95rem; font-weight: 300; color: var(--ink-3); line-height: 1.75; margin-bottom: 1.25rem; }
+.upsell-price { font-size: 0.95rem; font-weight: 600; color: var(--green); }
 
-  .pricing-revenue {
-    background: var(--forest);
-    border-radius: 12px;
-    padding: 2rem 2.5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .rev-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 0.5rem;
-  }
-  .rev-math {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
-  }
-  .rev-math strong { color: var(--white); }
-  .rev-total {
-    text-align: right;
-    flex-shrink: 0;
-  }
-  .rev-total-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1;
-  }
-  .rev-total-sub {
-    font-size: 0.75rem;
-    color: var(--teal);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-top: 0.3rem;
-  }
+/* MARKETS */
+.markets { background: var(--white); }
+.markets-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3.5rem; }
+.market-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem 1.25rem; transition: all var(--transition); }
+.market-card:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.mname { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem; }
+.mdetail { font-size: 0.9rem; font-weight: 300; color: var(--ink-3); line-height: 1.65; }
+.mstatus { display: inline-block; margin-top: 0.875rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 100px; }
+.mstatus.open { background: var(--green-l); color: var(--green); }
+.mstatus.soon { background: var(--orange-l); color: var(--orange); }
 
-  /* ── WHY MAIL ── */
-  .why { background: var(--forest); }
-  .why .section-title { color: var(--white); }
-  .why .section-sub { color: rgba(255,255,255,0.55); }
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-    margin-top: 3.5rem;
-    background: rgba(255,255,255,0.08);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .why-item {
-    background: rgba(255,255,255,0.03);
-    padding: 2.5rem 2rem;
-    transition: background 0.25s;
-  }
-  .why-item:hover { background: rgba(255,255,255,0.07); }
-  .why-icon {
-    font-size: 1.75rem;
-    margin-bottom: 1.25rem;
-    display: block;
-  }
-  .why-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 0.75rem;
-  }
-  .why-body {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-  .why-stat {
-    margin-top: 1.25rem;
-    font-size: 0.75rem;
-    color: var(--teal);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
+/* CTA BANNER */
+.cta-banner { background: var(--green); padding: 6rem 0; }
+.cta-inner { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 500; color: var(--white); line-height: 1.15; max-width: 640px; letter-spacing: -0.02em; }
+.cta-sub { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.75; max-width: 480px; }
 
-  /* ── MARKETS ── */
-  .markets { background: var(--white); }
-  .markets-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-top: 3rem;
-  }
-  .market-card {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.5rem;
-    background: var(--cream);
-    transition: all 0.25s;
-    cursor: default;
-  }
-  .market-card:hover {
-    border-color: var(--mid);
-    background: var(--light);
-    transform: translateY(-2px);
-  }
-  .market-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--forest);
-    margin-bottom: 0.35rem;
-  }
-  .market-detail {
-    font-size: 0.75rem;
-    color: var(--muted);
-    line-height: 1.5;
-    font-weight: 300;
-  }
-  .market-status {
-    display: inline-block;
-    margin-top: 0.75rem;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.6rem;
-    border-radius: 100px;
-  }
-  .status-open { background: var(--light); color: var(--green); }
-  .status-soon { background: var(--orange-l); color: var(--orange); }
+/* CONTACT — larger form */
+.contact { background: var(--paper); }
+.contact-form { max-width: 760px; margin: 3.5rem auto 0; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-xl); padding: 3rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-group.full { margin-bottom: 1.25rem; }
+label { font-size: 0.95rem; font-weight: 500; color: var(--ink-2); letter-spacing: 0.02em; }
+input, select, textarea { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 300; color: var(--ink); background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.1rem; transition: border-color var(--transition); outline: none; width: 100%; }
+input:focus, select:focus, textarea:focus { border-color: var(--green); background: var(--white); }
+input.error, select.error, textarea.error { border-color: var(--orange); }
+textarea { resize: vertical; min-height: 130px; }
+select { appearance: none; cursor: pointer; }
+.submit-btn { width: 100%; padding: 1.1rem 2rem; font-size: 1.05rem; margin-top: 0.5rem; }
+.form-success { display: none; text-align: center; padding: 3rem 2rem; }
+.form-success.show { display: block; }
+.success-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--green-l); color: var(--green); font-size: 1.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; color: var(--ink); margin-bottom: 0.5rem; }
+.form-success p { font-size: 1rem; color: var(--ink-3); font-weight: 300; }
 
-  /* ── NICHES ── */
-  .niches { background: var(--cream); }
-  .niches-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .niche-cats {
-    display: flex; flex-wrap: wrap; gap: 0.5rem;
-    margin-top: 3rem;
-  }
-  .niche-tag {
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.4rem 0.875rem;
-    border-radius: 100px;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    background: var(--white);
-    transition: all 0.2s;
-    cursor: default;
-  }
-  .niche-tag:hover {
-    border-color: var(--mid);
-    color: var(--forest);
-    background: var(--light);
-  }
-  .niche-tag.hot {
-    background: var(--orange-l);
-    border-color: var(--orange);
-    color: var(--orange);
-  }
+/* FOOTER — white copy color */
+footer { background: var(--ink); padding: 4rem 0 0; }
+.footer-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+.footer-logo span { color: var(--green-m); }
+.footer-tagline { font-size: 1rem; font-weight: 300; color: var(--white); margin-bottom: 1.25rem; }
+.footer-contact { display: flex; flex-direction: column; gap: 0.35rem; }
+.footer-contact a { font-size: 1rem; color: var(--white); transition: color var(--transition); }
+.footer-contact a:hover { color: var(--green-m); }
+.footer-links { display: flex; gap: 4rem; }
+.footer-col { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-col-title { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
+.footer-col a { font-size: 1rem; color: var(--white); transition: color var(--transition); }
+.footer-col a:hover { color: var(--green-m); }
+.footer-copy { padding: 1.5rem 0; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
 
-  /* ── CTA SECTION ── */
-  .cta-section {
-    background: linear-gradient(135deg, var(--forest) 0%, #0a5a44 100%);
-    padding: 7rem 8%;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%; transform: translate(-50%,-50%);
-    width: 800px; height: 800px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(93,202,165,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-section .section-title { color: var(--white); margin: 0 auto 1rem; max-width: 600px; }
-  .cta-section .section-sub { color: rgba(255,255,255,0.55); margin: 0 auto 2.5rem; text-align: center; }
-  .cta-actions { display: flex; gap: 1rem; justify-content: center; align-items: center; }
-  .btn-white {
-    background: var(--white);
-    color: var(--forest);
-    padding: 0.875rem 2.25rem;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s;
-    border: 2px solid var(--white);
-    display: inline-block;
-  }
-  .btn-white:hover {
-    background: transparent;
-    color: var(--white);
-    transform: translateY(-1px);
-  }
-  .btn-outline-white {
-    border: 2px solid rgba(255,255,255,0.3);
-    color: rgba(255,255,255,0.75);
-    padding: 0.875rem 2rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-decoration: none;
-    transition: all 0.2s;
-    display: inline-block;
-  }
-  .btn-outline-white:hover { border-color: var(--teal); color: var(--teal); }
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── FOOTER ── */
-  footer {
-    background: #040f0c;
-    padding: 3rem 8%;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1.5rem;
-  }
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--white);
-  }
-  .footer-logo span { color: var(--teal); }
-  .footer-tagline {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.35);
-    margin-top: 0.3rem;
-  }
-  .footer-contact { text-align: right; }
-  .footer-contact a {
-    display: block;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    transition: color 0.2s;
-    margin-bottom: 0.25rem;
-  }
-  .footer-contact a:hover { color: var(--teal); }
-  .footer-copy {
-    width: 100%;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.2);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 1.5rem;
-    text-align: center;
-  }
-
-  /* ── SCROLL REVEAL ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s, transform 0.6s;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-right { display: none; }
-    .hero-left { padding: 5rem 5% 4rem; }
-    .how-grid { grid-template-columns: 1fr 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    .why-grid { grid-template-columns: 1fr; }
-    .markets-grid { grid-template-columns: 1fr 1fr; }
-    .niches-intro { grid-template-columns: 1fr; gap: 0; }
-    .rev-total { text-align: left; }
-    section { padding: 4rem 5%; }
-    .nav-links { display: none; }
-  }
-  @media (max-width: 600px) {
-    .how-grid { grid-template-columns: 1fr; }
-    .markets-grid { grid-template-columns: 1fr 1fr; }
-    .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
-    .cta-actions { flex-direction: column; }
-  }
+/* RESPONSIVE */
+@media (max-width: 1060px) {
+  .price-grid { grid-template-columns: 1fr 1fr; }
+  .included-grid { grid-template-columns: repeat(2, 1fr); }
+  .upsell-grid { grid-template-columns: 1fr 1fr; }
+  .markets-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; text-align: center; padding-top: 90px; }
+  .hero-badge { margin-left: auto; margin-right: auto; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-visual { order: -1; }
+  .card-mockup { max-width: 340px; }
+  .two-col { grid-template-columns: 1fr; gap: 3rem; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .excl-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  #navbar .btn-pill { display: none; }
+}
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  section { padding: 4.5rem 0; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .price-grid { grid-template-columns: 1fr; }
+  .included-grid { grid-template-columns: 1fr 1fr; }
+  .upsell-grid { grid-template-columns: 1fr; }
+  .markets-grid { grid-template-columns: 1fr 1fr; }
+  .contact-form { padding: 2rem 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-links { gap: 2.5rem; }
+  .hero-stats { flex-direction: column; gap: 1rem; align-items: center; }
+  .hstat-divider { width: 40px; height: 1px; }
+}
+@media (max-width: 480px) {
+  .markets-grid { grid-template-columns: 1fr; }
+  .included-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">Bright Climb <span>Mail</span></div>
-  <div class="nav-links">
-    <a href="#how">How It Works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#markets">Markets</a>
-    <a href="#contact" class="nav-cta">Claim Your Spot</a>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Bright Climb <span>Mail</span></a>
+    <div class="nav-links">
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#markets">Markets</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn-pill btn-dark">Reserve Your Spot</a>
+    <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="#how" class="drawer-link">How It Works</a>
+    <a href="#pricing" class="drawer-link">Pricing</a>
+    <a href="#markets" class="drawer-link">Markets</a>
+    <a href="#contact" class="drawer-link">Contact</a>
+    <a href="#contact" class="btn-pill btn-dark drawer-cta">Reserve Your Spot</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-grid-bg"></div>
-
-  <div class="hero-left">
-    <div class="hero-eyebrow">
-      <span class="eyebrow-dot"></span>
-      Now Enrolling — West Hartford Spring Campaign
+<section class="hero" id="top">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Now Enrolling — West Hartford and Avon Campaigns
     </div>
-
-    <h1>
-  Put Your Business in <em>5,000 Affluent</em> CT Homeowners' Hands
-</h1>
-
-    <p class="hero-sub">
-      Bright Climb Mail delivers premium shared postcard campaigns to the highest-income neighborhoods in Connecticut. One business per industry. Done for you. Trackable results.
-    </p>
-
+    <h1 class="hero-h1">Put Your Business in <span style="color:var(--teal)">5,000+</span> Affluent CT Homeowners' Hands</h1>
+    <p class="hero-sub">Bright Climb Mail creates premium shared postcard campaigns for local businesses that want direct exposure, compelling offers, and measurable results.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Claim Your Category</a>
-      <a href="#how" class="btn-ghost">See how it works</a>
+      <a href="#contact" class="btn-pill btn-dark">Reserve Your Industry Spot</a>
+      <a href="#how" class="btn-pill btn-outline">See How It Works</a>
     </div>
-
     <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">5,000<span>+</span></div>
-        <div class="stat-label">Homes per drop</div>
+      <div class="hstat">
+        <!-- 5,000+ in teal -->
+        <div class="hstat-n teal">5,000<sup>+</sup></div>
+        <div class="hstat-l">Homes per drop</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">1<span> per</span></div>
-        <div class="stat-label">Business per industry</div>
+      <div class="hstat-divider"></div>
+      <div class="hstat">
+        <div class="hstat-n teal">1</div>
+        <div class="hstat-l">Business per category</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">$100K<span>+</span></div>
-        <div class="stat-label">Median household income</div>
+      <div class="hstat-divider"></div>
+      <div class="hstat">
+        <div class="hstat-n teal">$100K<sup>+</sup></div>
+        <div class="hstat-l">Median household income</div>
       </div>
     </div>
   </div>
+  <div class="hero-visual">
+    <div class="card-mockup">
+      <div class="card-banner top" style="background:linear-gradient(135deg,#0A2A6B 0%,#1A4A9B 100%);padding:0.6rem 1rem"><span style="display:block;font-size:0.62rem;font-weight:800;color:#F5A623;letter-spacing:0.08em;text-transform:uppercase">EXCLUSIVE West Hartford OFFERS JUST FOR YOU</span><span style="display:block;font-size:0.52rem;font-weight:600;color:#fff;letter-spacing:0.04em;margin-top:2px">Trusted Local Businesses &bull; Savings &bull; Services &bull; Dining &amp; More!</span></div>
+      <div class="card-grid-real" style="grid-template-rows:auto auto">
 
-  <div class="hero-right">
-    <div class="mockup-wrap">
-      <div class="card-label">West Hartford Spring Mailer</div>
-      <div class="card-mockup">
-        <div class="card-top-banner">
-          <p>Exclusive West Hartford Offers<br>For Local Families</p>
+        <div class="ad-slot gold-grad-1" style="min-height:88px">
+          <div class="ad-biz">West Hartford Realty</div>
+          <div class="ad-offer">Thinking of Selling?</div>
+          <div class="ad-detail">Top dollar results, fast closings<br>Serving CT homeowners since 2003</div>
+          <div class="ad-cta">Free home valuation &rarr;</div>
         </div>
-        <div class="card-grid">
-          <div class="card-slot navy"><div class="card-slot-inner">Your Ad Here</div></div>
-          <div class="card-slot teal-s"><div class="card-slot-inner">Your Ad Here</div></div>
-          <div class="card-slot navy"><div class="card-slot-inner">Your Ad Here</div></div>
-          <div class="card-slot filled"><div class="card-slot-inner">CCJR<br>Junk Removal<br>✓ Booked</div></div>
 
-          <div class="card-slot teal-s"><div class="card-slot-inner">Your Ad Here</div></div>
-          <div class="card-slot navy"><div class="card-slot-inner">Your Ad Here</div></div>
-          <div class="card-slot teal-s"><div class="card-slot-inner">Your Ad Here</div></div>
-          <div class="card-slot navy"><div class="card-slot-inner">Your Ad Here</div></div>
+        <div class="ad-slot gold-grad-2" style="min-height:88px;position:relative">
+          <div class="ad-biz">CCJR Junk Removal</div>
+          <div class="ad-offer">$50 OFF Any Cleanout</div>
+          <div class="ad-detail">Same-day service available<br>Licensed &amp; insured &bull; CT</div>
+          <div class="ad-cta">Call 203-555-0100</div>
+          <div class="ad-reserved" style="background:rgba(0,0,0,0.15);color:#2C2C2C">&#10003; Reserved</div>
         </div>
-        <div class="card-bottom-banner">
-          <p>Sponsor Banner — Dominant Full-Width Placement</p>
-        </div>
+
+        <div style="grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:2px"><div class="ad-slot slate-1"><div class="ad-biz">Summit Roofing CT</div><div class="ad-offer">Free Inspection</div><div class="ad-detail">GAF certified<br>Storm specialists</div><div class="ad-cta">summitroofingct.com</div></div><div class="ad-slot slate-2"><div class="ad-biz">Classic Cuts</div><div class="ad-offer">$10 OFF 1st Visit</div><div class="ad-detail">Walk-ins welcome<br>Mon–Sat 9–7pm</div><div class="ad-cta">Book online</div></div><div class="ad-slot slate-3"><div class="ad-biz">Trattoria Bella</div><div class="ad-offer">$20 OFF Dinner</div><div class="ad-detail">Authentic Italian<br>Open Tue–Sun</div><div class="ad-cta">Reserve a table</div></div><div class="ad-slot slate-4"><div class="ad-biz">Glow Med Spa</div><div class="ad-offer">20% OFF Botox</div><div class="ad-detail">Board-certified<br>West Hartford</div><div class="ad-cta">glowmedspa.com</div></div></div>
+
+      </div>
+      <div class="card-banner bottom" style="background:linear-gradient(135deg,#1A4A9B 0%,#0A2A6B 100%)"><span>Scan QR Codes for Exclusive Offers &mdash; Delivered to Your Door</span></div>
+      <div class="card-chip">West Hartford Spring Mailer</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span>West Hartford</span><span class="dot">&#9679;</span><span>Avon</span><span class="dot">&#9679;</span><span>Glastonbury</span><span class="dot">&#9679;</span><span>Farmington</span><span class="dot">&#9679;</span><span>Simsbury</span><span class="dot">&#9679;</span><span>Guilford</span><span class="dot">&#9679;</span><span>Madison</span><span class="dot">&#9679;</span><span>Essex</span><span class="dot">&#9679;</span><span>Clinton</span><span class="dot">&#9679;</span><span>Greenwich</span><span class="dot">&#9679;</span><span>Westport</span><span class="dot">&#9679;</span><span>Fairfield</span><span class="dot">&#9679;</span>
+    <span>West Hartford</span><span class="dot">&#9679;</span><span>Avon</span><span class="dot">&#9679;</span><span>Glastonbury</span><span class="dot">&#9679;</span><span>Farmington</span><span class="dot">&#9679;</span><span>Simsbury</span><span class="dot">&#9679;</span><span>Guilford</span><span class="dot">&#9679;</span><span>Madison</span><span class="dot">&#9679;</span><span>Essex</span><span class="dot">&#9679;</span><span>Clinton</span><span class="dot">&#9679;</span><span>Greenwich</span><span class="dot">&#9679;</span><span>Westport</span><span class="dot">&#9679;</span><span>Fairfield</span><span class="dot">&#9679;</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem reveal" id="problem">
+  <div class="container two-col">
+    <div class="col-text">
+      <div class="section-label green">The problem</div>
+      <!-- Line break after "crowded." -->
+      <h2 class="section-title">Local ads are crowded.<br>Mailboxes are not.</h2>
+      <p class="section-body">Facebook ads, Google campaigns, and social posts compete against thousands of other messages every single day.</p>
+      <p class="section-body mt">They are expensive, easy to ignore, and impossible to hold in your hand.</p>
+      <p class="section-body mt">Direct mail gives your business a physical, high-trust presence right in the homes of people who actually spend money. It gets picked up, read at the kitchen table, and kept on the counter — putting your name in front of the right people at exactly the right time.</p>
+    </div>
+    <div class="col-cards">
+      <div class="problem-card bad">
+        <div class="problem-icon">&#128565;</div>
+        <div class="problem-label">Digital ads</div>
+        <ul class="problem-list">
+          <li>Scrolled past in 0.3 seconds</li>
+          <li>Competing with thousands of others</li>
+          <li>Rising costs, falling attention</li>
+          <li>Zero physical presence</li>
+        </ul>
+      </div>
+      <div class="problem-card good">
+        <div class="problem-icon">&#128233;</div>
+        <div class="problem-label">Bright Climb Mail</div>
+        <ul class="problem-list">
+          <li>Lands in real hands at home</li>
+          <li>One business per category</li>
+          <li>Premium affluent neighborhoods</li>
+          <li>Trackable with QR codes</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="section-label">The process</div>
-  <div class="section-title">Simple. Fast. Done for you.</div>
-  <div class="section-sub">We handle everything from ad design to delivery. You approve, we execute.</div>
+<section class="how reveal" id="how">
+  <div class="container">
+    <div class="section-label green centered">The process</div>
+    <h2 class="section-title centered">Simple, fast, and done for you</h2>
+    <p class="section-body centered mxauto">We handle everything from ad design to USPS delivery.<br>You approve it, we execute. Most clients go from first call to live campaign in under three weeks.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Pick Your Market</h3>
+        <p class="step-body">Choose the Connecticut town you want to dominate. We target USPS routes in the highest-income zip codes so your ad lands in the best homes.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Claim Your Category</h3>
+        <p class="step-body">Lock in your industry slot before a competitor does. Only one roofer, one barber, one realtor per campaign. First come, first served.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3 class="step-title">We Build Your Ad</h3>
+        <p class="step-body">Our team writes your copy, designs your ad block, crafts your offer, and builds a custom QR tracking page. Zero work required from you.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3 class="step-title">We Mail and Track</h3>
+        <p class="step-body">We handle printing and USPS Every Door Direct Mail delivery. After the drop you receive a full QR scan and engagement report.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <div class="how-grid reveal">
-    <div class="how-step">
-      <div class="step-num">01</div>
-      <div class="step-icon">📍</div>
-      <div class="step-title">Claim your category</div>
-      <div class="step-body">Reserve the only slot for your industry in your target town. One roofer, one barber, one realtor — period. First-come, first-served.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-num">02</div>
-      <div class="step-icon">✏️</div>
-      <div class="step-title">We build your ad</div>
-      <div class="step-body">Our team writes your copy, crafts your offer, designs your ad block, and creates a custom QR tracking page. Zero work required from you.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-num">03</div>
-      <div class="step-icon">✅</div>
-      <div class="step-title">Approve &amp; mail</div>
-      <div class="step-body">Review your proof and give us the green light. We handle all printing and USPS Every Door Direct Mail delivery to 5,000 affluent households.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-num">04</div>
-      <div class="step-icon">📊</div>
-      <div class="step-title">Track your results</div>
-      <div class="step-body">Receive a full QR scan and engagement report after the drop. See real traffic data and use it to decide on the next campaign.</div>
+<!-- EXCLUSIVITY / CATEGORY SLOTS -->
+<!--
+  HOW TO UPDATE SLOTS WHEN A CATEGORY IS RESERVED:
+  1. Find the category below
+  2. Change class="slot-item open" to class="slot-item reserved"
+  3. Change the tag text from "Open" to "Reserved"
+  The color changes automatically — no other edits needed.
+-->
+<section class="exclusivity reveal" id="exclusivity">
+  <div class="container">
+    <div class="excl-inner">
+      <div class="excl-text">
+        <div class="section-label white">Category exclusivity</div>
+        <h2 class="section-title white">One business per industry. First come, first served.</h2>
+        <p class="section-body white-muted">No two businesses in the same category share a card. Once your industry is claimed, every competitor is locked out for the entire campaign. Reserved territory, not a crowded directory.</p>
+        <a href="#contact" class="btn-pill btn-white mt-btn">Check if your category is open</a>
+      </div>
+      <div class="excl-visual">
+        <div class="slot-item reserved">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Junk Removal</span>
+          <span class="slot-tag">Reserved</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Roofing</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Med Spa</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">HVAC</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Barber / Salon</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Realtor</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Restaurant</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Auto Detailing</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Landscaping</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Plumbing</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Pressure Washing</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <div class="slot-item open">
+          <span class="slot-dot"></span>
+          <span class="slot-name">Mortgage Broker</span>
+          <span class="slot-tag">Open</span>
+        </div>
+        <!-- Campaign note now in white -->
+        <p class="excl-note">West Hartford Spring Campaign</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="pricing-header reveal">
-    <div class="section-label">Transparent pricing</div>
-    <div class="section-title">Placement-based. No hidden fees.</div>
-    <div class="section-sub">Every slot is the same size. Pricing reflects placement on the card — front gets seen first, back gets strong reach. Sponsor banners dominate both sides.</div>
-  </div>
-
-  <div class="pricing-grid reveal">
-    <div class="price-card">
-      <div class="price-tier">Back of card</div>
-      <div class="price-name">Back Ad Slot</div>
-      <div class="price-desc">8 uniform ad blocks on the back of the card. Seen by every household. Strong reach, excellent value.</div>
-      <div class="price-amount">$399</div>
-      <div class="price-per">per slot · one business per industry</div>
-      <ul class="price-features">
-        <li>Uniform ad block — same size as all others</li>
-        <li>Professional ad design included</li>
-        <li>Offer + copy creation included</li>
-        <li>Custom QR code + tracking page</li>
-        <li>Post-campaign performance report</li>
-        <li>Category exclusivity for the campaign</li>
-      </ul>
-    </div>
-
-    <div class="price-card featured">
-      <div class="price-badge">Most Popular</div>
-      <div class="price-tier">Front of card</div>
-      <div class="price-name">Front Ad Slot</div>
-      <div class="price-desc">8 uniform ad blocks on the front — the first side seen when the card hits the mailbox. Prime real estate.</div>
-      <div class="price-amount">$499</div>
-      <div class="price-per">per slot · one business per industry</div>
-      <ul class="price-features">
-        <li>Front-of-card placement — seen first</li>
-        <li>Professional ad design included</li>
-        <li>Offer + copy creation included</li>
-        <li>Custom QR code + tracking page</li>
-        <li>Post-campaign performance report</li>
-        <li>Category exclusivity for the campaign</li>
-      </ul>
-    </div>
-
-    <div class="price-card">
-      <div class="price-tier">Full-width sponsor banner</div>
-      <div class="price-name">Sponsor Banners</div>
-      <div class="price-desc">Full-width banners commanding the top and bottom of the card. Only 2 available per campaign — maximum visual dominance.</div>
-      <div class="price-amount" style="font-size:1.75rem;">$499–$599</div>
-      <div class="price-per">2 banners available per card · extremely limited</div>
-      <ul class="price-features">
-        <li>Front bottom banner — $599 · seen first, highest impact</li>
-        <li>Back top banner — $499 · dominant back-of-card placement</li>
-        <li>Full-width span — largest format on the card</li>
-        <li>Professional design + copywriting included</li>
-        <li>Custom QR code + tracking page</li>
-        <li>Post-campaign performance report</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- WHY DIRECT MAIL -->
-<section class="why">
-  <div class="section-label">Why direct mail still wins</div>
-  <div class="section-title" style="color:var(--white)">Your competition is<br>ignoring their mailbox.</div>
-  <div class="section-sub">Most local businesses chase digital. Physical mail to affluent households cuts through the noise in a way no Facebook ad can.</div>
-
-  <div class="why-grid reveal">
-    <div class="why-item">
-      <span class="why-icon">📬</span>
-      <div class="why-title">Tangible & trusted</div>
-      <div class="why-body">A postcard in someone's hand commands attention in a way a scrolled-past ad never will. It sits on countertops. It gets passed around. It creates memory.</div>
-      <div class="why-stat">98% of mail is opened vs. 20% of emails</div>
-    </div>
-    <div class="why-item">
-      <span class="why-icon">🏡</span>
-      <div class="why-title">Affluent homeowners</div>
-      <div class="why-body">We use USPS EDDM route data to target zip codes with the highest median household incomes in Connecticut. Your ad reaches people who actually buy.</div>
-      <div class="why-stat">$100K+ median income target markets</div>
-    </div>
-    <div class="why-item">
-      <span class="why-icon">📏</span>
-      <div class="why-title">Measurable & trackable</div>
-      <div class="why-body">Every ad slot includes a custom QR code and landing page. Track scans, clicks, and form fills. Know exactly what your campaign delivered.</div>
-      <div class="why-stat">Full QR scan report post-campaign</div>
-    </div>
-    <div class="why-item">
-      <span class="why-icon">💰</span>
-      <div class="why-title">Shared cost, solo impact</div>
-      <div class="why-body">Solo direct mail to 5,000 homes costs $3,000–$8,000. We give you the same reach for a fraction of the price — because you share print and postage costs.</div>
-      <div class="why-stat">Save up to 80% vs. solo mailing</div>
-    </div>
-    <div class="why-item">
-      <span class="why-icon">🔒</span>
-      <div class="why-title">Category exclusivity</div>
-      <div class="why-body">No two businesses in the same industry on the same card. Your roofer competitor cannot appear alongside you. This is reserved territory — not a crowded directory.</div>
-      <div class="why-stat">One business per industry per campaign</div>
-    </div>
-    <div class="why-item">
-      <span class="why-icon">⚡</span>
-      <div class="why-title">Done in days, not months</div>
-      <div class="why-body">We handle design, copywriting, QR setup, print coordination, and USPS filing. From deposit to delivery, campaigns launch fast. No agency bureaucracy.</div>
-      <div class="why-stat">Typical turnaround: 3–4 weeks</div>
+<section class="pricing reveal" id="pricing">
+  <div class="container">
+    <div class="section-label green centered">Campaign options</div>
+    <h2 class="section-title centered">Transparent, placement-based pricing</h2>
+    <p class="section-body centered mxauto">Every ad slot is the same uniform size. Pricing reflects where on the card your ad appears.<br>All packages include design, copy, QR tracking, and full reporting.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-tier">Back of Card</div>
+        <div class="price-name">Back Ad Slot</div>
+        <div class="price-desc">Seen by every household that flips the card. Strong reach, excellent value.</div>
+        <div class="price-amount">$399</div>
+        <div class="price-per">per slot, one business per industry</div>
+        <ul class="price-features">
+          <li>Uniform ad block, same size as all others</li>
+          <li>Professional ad design</li>
+          <li>Offer and copy creation</li>
+          <li>Custom QR code and tracking page</li>
+          <li>Post-campaign performance report</li>
+          <li>Category exclusivity</li>
+        </ul>
+        <a href="#contact" class="btn-pill btn-outline-dark full-w">Reserve This Spot</a>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="price-tier">Front of Card</div>
+        <div class="price-name">Front Ad Slot</div>
+        <div class="price-desc">The first thing seen when the postcard arrives. Prime real estate, premium exposure.</div>
+        <div class="price-amount">$499</div>
+        <div class="price-per">per slot, one business per industry</div>
+        <ul class="price-features">
+          <li>Front placement, seen first</li>
+          <li>Professional ad design</li>
+          <li>Offer and copy creation</li>
+          <li>Custom QR code and tracking page</li>
+          <li>Post-campaign performance report</li>
+          <li>Category exclusivity</li>
+        </ul>
+        <a href="#contact" class="btn-pill btn-white full-w">Reserve This Spot</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Front Sponsor Banner</div>
+        <div class="price-name">Front Banner Slot</div>
+        <div class="price-desc">Full-width banner on the front of the card. Maximum visibility, dominant placement.</div>
+        <div class="price-amount">$599</div>
+        <div class="price-per">only 1 available per campaign</div>
+        <ul class="price-features">
+          <li>Full-width front banner placement</li>
+          <li>Largest format on the card</li>
+          <li>Premium design and copywriting</li>
+          <li>Custom QR code and tracking page</li>
+          <li>Post-campaign performance report</li>
+          <li>Category exclusivity</li>
+        </ul>
+        <a href="#contact" class="btn-pill btn-outline-dark full-w">Reserve This Spot</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">Back Sponsor Banner</div>
+        <div class="price-name">Back Banner Slot</div>
+        <div class="price-desc">Full-width banner on the back of the card. Strong dominant placement, commanding attention.</div>
+        <div class="price-amount">$499</div>
+        <div class="price-per">only 1 available per campaign</div>
+        <ul class="price-features">
+          <li>Full-width back banner placement</li>
+          <li>Largest format on the card</li>
+          <li>Premium design and copywriting</li>
+          <li>Custom QR code and tracking page</li>
+          <li>Post-campaign performance report</li>
+          <li>Category exclusivity</li>
+        </ul>
+        <a href="#contact" class="btn-pill btn-outline-dark full-w">Reserve This Spot</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MARKETS -->
-<section class="markets" id="markets">
-  <div class="section-label">Active markets</div>
-  <div class="section-title">We start where the money lives.</div>
-  <div class="section-sub">Launching in Connecticut's highest-income towns first. Limited slots per market — once a campaign fills, it's closed.</div>
-
-  <div class="markets-grid reveal">
-    <div class="market-card">
-      <div class="market-name">West Hartford</div>
-      <div class="market-detail">Median HHI $95K+. Dense service market. Campaign #1 now enrolling.</div>
-      <span class="market-status status-open">Enrolling now</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">Glastonbury</div>
-      <div class="market-detail">Median HHI $110K+. Affluent suburban homeowners. High service demand.</div>
-      <span class="market-status status-open">Enrolling now</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">Avon</div>
-      <div class="market-detail">One of CT's wealthiest towns. High home values, strong buyer intent.</div>
-      <span class="market-status status-soon">Coming soon</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">Farmington</div>
-      <div class="market-detail">Premium mixed residential market. Strong spending on home services.</div>
-      <span class="market-status status-soon">Coming soon</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">Simsbury</div>
-      <div class="market-detail">Upper-income families. High homeownership. Landscaping, services, dining.</div>
-      <span class="market-status status-soon">Coming soon</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">South Windsor</div>
-      <div class="market-detail">Growing affluent suburb. Strong restaurant and services demand.</div>
-      <span class="market-status status-soon">Coming soon</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">Madison</div>
-      <div class="market-detail">Coastal CT. High-income, seasonal spending on lifestyle services.</div>
-      <span class="market-status status-soon">Coming soon</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">Guilford</div>
-      <div class="market-detail">Established shoreline community. Strong homeowner service spend.</div>
-      <span class="market-status status-soon">Coming soon</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">Essex</div>
-      <div class="market-detail">Charming shoreline village. Affluent homeowners with strong local loyalty.</div>
-      <span class="market-status status-soon">Coming soon</span>
-    </div>
-    <div class="market-card">
-      <div class="market-name">Clinton</div>
-      <div class="market-detail">Coastal CT community. Growing residential base, high homeownership rates.</div>
-      <span class="market-status status-soon">Coming soon</span>
+<!-- WHAT'S INCLUDED -->
+<section class="included reveal">
+  <div class="container">
+    <div class="section-label green centered">Everything done for you</div>
+    <h2 class="section-title centered">What is included in every package</h2>
+    <div class="included-grid">
+      <div class="included-item"><div class="inc-icon">&#127912;</div><div class="inc-label">Postcard Design</div><div class="inc-body">Premium print-ready design crafted to grab attention in the mailbox.</div></div>
+      <div class="included-item"><div class="inc-icon">&#128161;</div><div class="inc-label">Offer Creation</div><div class="inc-body">We build an irresistible offer for your target audience in your specific market.</div></div>
+      <div class="included-item"><div class="inc-icon">&#9998;</div><div class="inc-label">Ad Copywriting</div><div class="inc-body">Professional copy written to convert high-income homeowners into real customers.</div></div>
+      <div class="included-item"><div class="inc-icon">&#128247;</div><div class="inc-label">QR Tracking</div><div class="inc-body">Custom QR codes so you can track scans, clicks, and engagement from every drop.</div></div>
+      <div class="included-item"><div class="inc-icon">&#128230;</div><div class="inc-label">USPS Targeting</div><div class="inc-body">Every Door Direct Mail routes selected for the highest household incomes in your area.</div></div>
+      <div class="included-item"><div class="inc-icon">&#128200;</div><div class="inc-label">Campaign Report</div><div class="inc-body">After the drop, you receive a full performance report with scan data and reach metrics.</div></div>
+      <div class="included-item"><div class="inc-icon">&#128230;</div><div class="inc-label">Print Coordination</div><div class="inc-body">We manage printing, quality checks, and delivery to the post office on your behalf.</div></div>
     </div>
   </div>
 </section>
 
-<!-- NICHES -->
-<section class="niches">
-  <div class="niches-intro">
-    <div class="reveal">
-      <div class="section-label">Who it's for</div>
-      <div class="section-title">One slot per industry.<br>Claim yours first.</div>
-      <div class="section-sub">We work with local service businesses, restaurants, lifestyle brands, and professional services. The moment your category is claimed, competitors are locked out for that campaign.</div>
-      <a href="#contact" class="btn-primary" style="margin-top:2rem; display:inline-block;">Check if your category is open</a>
+<!-- WHO IT'S FOR -->
+<section class="whofor reveal" id="whofor">
+  <div class="container">
+    <div class="section-label green centered">Who it is for</div>
+    <h2 class="section-title centered">Built for local Connecticut businesses<br>ready to grow</h2>
+    <p class="section-body centered mxauto">If you serve homeowners and want a direct, physical connection to high-income households in your area, this campaign is built for you.</p>
+    <div class="niche-tags">
+      <!-- All tags plain — no green highlight on hot categories -->
+      <span class="ntag reserved-tag">Junk Removal &#10003;</span>
+      <span class="ntag">Roofing</span>
+      <span class="ntag">Med Spa</span>
+      <span class="ntag">Barber / Salon</span>
+      <span class="ntag">Realtor</span>
+      <span class="ntag">HVAC</span>
+      <span class="ntag">Plumbing</span>
+      <span class="ntag">Landscaping</span>
+      <span class="ntag">Pressure Washing</span>
+      <span class="ntag">Painting</span>
+      <span class="ntag">House Cleaning</span>
+      <span class="ntag">Pest Control</span>
+      <span class="ntag">Electrician</span>
+      <span class="ntag">Auto Detailing</span>
+      <span class="ntag">Car Wash</span>
+      <span class="ntag">Restaurant</span>
+      <span class="ntag">Bakery / Cafe</span>
+      <span class="ntag">Fitness / Gym</span>
+      <span class="ntag">Mortgage Broker</span>
+      <span class="ntag">Insurance</span>
+      <span class="ntag">CPA / Accountant</span>
+      <span class="ntag">Attorney</span>
+      <span class="ntag">Remodeling</span>
+      <span class="ntag">Window / Door</span>
     </div>
-    <div></div>
-  </div>
-
-  <div class="niche-cats reveal">
-    <span class="niche-tag hot">Junk Removal</span>
-    <span class="niche-tag hot">Roofing</span>
-    <span class="niche-tag hot">Med Spa</span>
-    <span class="niche-tag hot">Barber / Salon</span>
-    <span class="niche-tag hot">Realtor</span>
-    <span class="niche-tag">HVAC</span>
-    <span class="niche-tag">Plumbing</span>
-    <span class="niche-tag">Landscaping</span>
-    <span class="niche-tag">Pressure Washing</span>
-    <span class="niche-tag">Painting</span>
-    <span class="niche-tag">House Cleaning</span>
-    <span class="niche-tag">Pest Control</span>
-    <span class="niche-tag">Electrician</span>
-    <span class="niche-tag">Auto Detailing</span>
-    <span class="niche-tag">Car Wash</span>
-    <span class="niche-tag">Restaurant</span>
-    <span class="niche-tag">Bakery / Cafe</span>
-    <span class="niche-tag">Fitness / Gym</span>
-    <span class="niche-tag">Mortgage Broker</span>
-    <span class="niche-tag">Insurance</span>
-    <span class="niche-tag">CPA / Accountant</span>
-    <span class="niche-tag">Attorney</span>
-    <span class="niche-tag">Remodeling</span>
-    <span class="niche-tag">Window / Door</span>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="section-label" style="color:var(--teal)">Ready to grow?</div>
-  <div class="section-title">Claim your category before someone else does.</div>
-  <div class="section-sub">Slots are first-come, first-served. One business per industry per town. Once a campaign fills, it's closed until the next drop.</div>
-
-  <div class="cta-actions">
-    <a href="mailto:matt@brightclimbmail.com?subject=Category%20Claim%20Request" class="btn-white">Email Matt Directly</a>
-    <a href="tel:+12032008912" class="btn-outline-white">Call or Text: 203-200-8912</a>
+<!-- UPSELLS -->
+<section class="upsells reveal">
+  <div class="container">
+    <div class="section-label green centered">Add-ons</div>
+    <h2 class="section-title centered">Amplify your results</h2>
+    <p class="section-body centered mxauto">Pair your campaign with additional growth services to maximize your reach and turn every scan into a customer.</p>
+    <div class="upsell-grid">
+      <div class="upsell-card">
+        <div class="upsell-icon">&#128140;</div>
+        <h3 class="upsell-title">Solo Postcard Campaign</h3>
+        <p class="upsell-body">Own the entire card yourself. Full postcard dedicated to your business, mailed to 5,000 homes.</p>
+        <!-- Updated price -->
+        <div class="upsell-price">From $4,000</div>
+      </div>
+      <div class="upsell-card">
+        <div class="upsell-icon">&#127760;</div>
+        <h3 class="upsell-title">Landing Page Build</h3>
+        <p class="upsell-body">A custom page behind your QR code to capture leads, explain your offer, and book appointments.</p>
+        <div class="upsell-price">From $500</div>
+      </div>
+      <div class="upsell-card">
+        <div class="upsell-icon">&#11088;</div>
+        <h3 class="upsell-title">Google Review Growth</h3>
+        <p class="upsell-body">We set up a system to help you collect more 5-star Google reviews from every job you complete.</p>
+        <div class="upsell-price">$300 / month</div>
+      </div>
+      <div class="upsell-card">
+        <div class="upsell-icon">&#128640;</div>
+        <h3 class="upsell-title">Monthly Marketing Support</h3>
+        <p class="upsell-body">Ongoing local marketing help including copywriting, offer strategy, and campaign planning.</p>
+        <div class="upsell-price">$497 / month</div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <p style="margin-top:2rem; font-size:0.8rem; color:rgba(255,255,255,0.3); letter-spacing:0.04em;">
-    matt@brightclimbmail.com &nbsp;·&nbsp; brightclimbmail.com &nbsp;·&nbsp; Connecticut
-  </p>
+<!-- MARKETS — West Hartford and Avon active -->
+<section class="markets reveal" id="markets">
+  <div class="container">
+    <div class="section-label green centered">Active markets</div>
+    <h2 class="section-title centered">We start where the money lives</h2>
+    <p class="section-body centered mxauto">We launch in Connecticut's highest-income towns first. Slots are limited per market and campaigns close once full — so act early to secure your spot.</p>
+    <div class="markets-grid">
+      <div class="market-card"><div class="mname">West Hartford</div><div class="mdetail">Median HHI $95K+. Dense service market. Campaign 1 now enrolling.</div><span class="mstatus open">Enrolling Now</span></div>
+      <div class="market-card"><div class="mname">Avon</div><div class="mdetail">One of CT's wealthiest towns. High home values and strong buyer intent.</div><span class="mstatus open">Enrolling Now</span></div>
+      <div class="market-card"><div class="mname">Glastonbury</div><div class="mdetail">Median HHI $110K+. Affluent suburban homeowners. High service demand.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Farmington</div><div class="mdetail">Premium residential market. Strong spending on home services.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Simsbury</div><div class="mdetail">Upper-income families, high homeownership, landscaping and dining demand.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Fairfield</div><div class="mdetail">Coastal Fairfield County. High-income commuter families with real buying power.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Greenwich</div><div class="mdetail">One of CT's most affluent communities. Premium lifestyle and home service spend.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Westport</div><div class="mdetail">Upscale coastal town. High demand for premium home, auto, and lifestyle services.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Madison</div><div class="mdetail">Coastal CT. High-income seasonal spending on lifestyle services.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Guilford</div><div class="mdetail">Established shoreline community. Strong homeowner service spend.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Essex</div><div class="mdetail">Charming river town. Affluent homeowners with strong local loyalty.</div><span class="mstatus soon">Coming Soon</span></div>
+      <div class="market-card"><div class="mname">Clinton</div><div class="mdetail">Coastal community with a growing residential base and high homeownership.</div><span class="mstatus soon">Coming Soon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER — line break after "industry" -->
+<section class="cta-banner reveal">
+  <div class="container cta-inner">
+    <h2 class="cta-title">Lock in your exclusive industry<br>slot before a competitor does</h2>
+    <p class="cta-sub">Slots are first-come, first-served. One business per industry per town. Once the campaign fills, it closes.</p>
+    <a href="#contact" class="btn-pill btn-white">Reserve My Spot</a>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact reveal" id="contact">
+  <div class="container">
+    <div class="section-label green centered">Get started</div>
+    <h2 class="section-title centered">Reserve your industry spot today</h2>
+    <p class="section-body centered mxauto">Fill out the form below and Matt will reach out to confirm your category and walk you through the next steps.</p>
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Your Name</label>
+          <input type="text" id="fname" name="name" placeholder="John Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="fbusiness">Business Name</label>
+          <input type="text" id="fbusiness" name="business" placeholder="Smith Roofing LLC" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="findustry">Industry / Category</label>
+          <input type="text" id="findustry" name="industry" placeholder="e.g. Roofing, Med Spa, HVAC" required />
+        </div>
+        <div class="form-group">
+          <label for="ftown">Target Town</label>
+          <input type="text" id="ftown" name="town" placeholder="e.g. West Hartford" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="femail">Email Address</label>
+          <input type="email" id="femail" name="email" placeholder="john@yourbusiness.com" required />
+        </div>
+        <div class="form-group">
+          <label for="fphone">Phone Number</label>
+          <input type="tel" id="fphone" name="phone" placeholder="203-555-0100" />
+        </div>
+      </div>
+      <div class="form-group full">
+        <label for="fpackage">Interested Package</label>
+        <select id="fpackage" name="package">
+          <option value="">Select a package...</option>
+          <option>Back Ad Slot ($399)</option>
+          <option>Front Ad Slot ($499)</option>
+          <option>Front Sponsor Banner ($599)</option>
+          <option>Back Sponsor Banner ($499)</option>
+          <option>Not sure yet, just exploring</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label for="fmessage">Anything else you want us to know?</label>
+        <textarea id="fmessage" name="message" rows="4" placeholder="Tell us about your business, your goals, or any questions you have..."></textarea>
+      </div>
+      <button type="submit" class="btn-pill btn-dark submit-btn">Send My Reservation Request</button>
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">&#10003;</div>
+        <h3>We got your request!</h3>
+        <p>Matt will be in touch within one business day to confirm your category and next steps.</p>
+      </div>
+    </form>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div>
-    <div class="footer-logo">Bright Climb <span>Mail</span></div>
-    <div class="footer-tagline">Connecticut Direct Mail Growth Network</div>
-  </div>
-  <div class="footer-contact">
-    <a href="tel:+12032008912">203-200-8912</a>
-    <a href="mailto:matt@brightclimbmail.com">matt@brightclimbmail.com</a>
-    <a href="https://brightclimbmail.com">brightclimbmail.com</a>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Bright Climb <span>Mail</span></div>
+      <div class="footer-tagline">Premium direct mail for&nbsp;Connecticut&nbsp;businesses.</div>
+      <div class="footer-contact">
+        <a href="mailto:matt@brightclimbmail.com">matt@brightclimbmail.com</a>
+        <a href="tel:+12032008912">203-200-8912</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">Navigate</div>
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#markets">Markets</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Get Started</div>
+        <a href="#contact">Reserve Your Spot</a>
+        <a href="#whofor">Who It Is For</a>
+        <a href="#pricing">Campaign Options</a>
+      </div>
+    </div>
   </div>
   <div class="footer-copy">
-    © 2025 Bright Climb Mail · Connecticut · All rights reserved
+    <div class="container">&copy; 2025 Bright Climb Mail. Connecticut. All rights reserved.</div>
   </div>
 </footer>
 
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+document.addEventListener('DOMContentLoaded', function () {
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function () {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
 
-  // Smooth nav highlight
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  const toggle = document.querySelector('.nav-toggle');
+  const drawer = document.getElementById('navDrawer');
+  if (toggle && drawer) {
+    toggle.addEventListener('click', function () { drawer.classList.toggle('open'); });
+    drawer.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { drawer.classList.remove('open'); });
     });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current
-        ? 'var(--teal)' : '';
+  }
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) { e.preventDefault(); window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' }); }
     });
   });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  window.addEventListener('scroll', function () {
+    let current = '';
+    sections.forEach(function (s) { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    navLinks.forEach(function (a) { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : ''; });
+  }, { passive: true });
+
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('.error').forEach(function (el) { el.classList.remove('error'); });
+      form.querySelectorAll('[required]').forEach(function (field) {
+        if (!field.value.trim()) { field.classList.add('error'); valid = false; }
+      });
+      const emailField = form.querySelector('#femail');
+      if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) { emailField.classList.add('error'); valid = false; }
+      if (valid) {
+        form.querySelectorAll('.form-row, .form-group, .submit-btn').forEach(function (el) { el.style.display = 'none'; });
+        successMsg.classList.add('show');
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+    form.querySelectorAll('input, select, textarea').forEach(function (field) {
+      field.addEventListener('input', function () { this.classList.remove('error'); });
+    });
+  }
+});
 </script>
 </body>
 </html>
