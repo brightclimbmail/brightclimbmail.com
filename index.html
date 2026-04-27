@@ -103,7 +103,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
 .hstat-n.teal { color: var(--teal); }
 .hstat-l { font-size: 0.78rem; color: var(--ink-4); letter-spacing: 0.05em; text-transform: uppercase; }
 .hstat-divider { width: 1px; height: 36px; background: var(--border); }
-.hero-visual { display: flex; justify-content: center; align-items: center; animation: fadeUp 0.8s 0.4s both; }
+.hero-visual { display: flex; justify-content: center; align-items: center; animation: fadeUp 0.8s 0.4s both; padding-top: 1.5rem; overflow: visible; }
 .card-mockup { width: 100%; max-width: 380px; background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); transform: rotate(1.5deg); transition: transform var(--transition); position: relative; }
 .card-mockup:hover { transform: rotate(0deg) scale(1.02); }
 .card-banner { background: var(--orange); padding: 0.75rem 1rem; text-align: center; }
@@ -151,31 +151,32 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
 .card-chip { position: absolute; top: -10px; right: -10px; background: var(--green); color: var(--white); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px; white-space: nowrap; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 
-/* ── POSTCARD MOCKUP — clean rebuild ── */
-.card-mockup { width: 100%; max-width: 400px; background: #1a1a1a; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); transform: rotate(1.5deg); transition: transform var(--transition); position: relative; }
-.card-mockup:hover { transform: rotate(0deg) scale(1.02); }
-.card-top-banner { background: linear-gradient(135deg,#0A2A6B 0%,#1A4A9B 100%); padding: 0.7rem 1rem; text-align: center; }
-.card-top-banner .ctb-l1 { display: block; font-size: 0.62rem; font-weight: 800; color: #F5A623; letter-spacing: 0.08em; text-transform: uppercase; }
-.card-top-banner .ctb-l2 { display: block; font-size: 0.5rem; font-weight: 600; color: #fff; letter-spacing: 0.04em; margin-top: 3px; }
-.card-bot-banner { background: linear-gradient(135deg,#1A4A9B 0%,#0A2A6B 100%); padding: 0.6rem 1rem; text-align: center; }
-.card-bot-banner span { font-size: 0.5rem; font-weight: 600; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
-.card-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.card-row-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-top: 2px; }
-.ad-gold { padding: 9px 8px; min-height: 90px; display: flex; flex-direction: column; gap: 2px; position: relative; }
+.card-mockup { width: 100%; max-width: 420px; background: #1a1a1a; border-radius: 12px; overflow: visible; box-shadow: var(--shadow-lg); transform: rotate(1deg); transition: transform var(--transition); position: relative; margin-top: 16px; }
+.card-mockup:hover { transform: rotate(0deg) scale(1.01); }
+.card-mockup > * { border-radius: 0; }
+.card-top-banner { background: linear-gradient(135deg,#0A2A6B 0%,#1A4A9B 100%); padding: 0.8rem 1rem; text-align: center; border-radius: 12px 12px 0 0; overflow: hidden; }
+.card-top-banner .ctb-l1 { display: block; font-size: 0.65rem; font-weight: 800; color: #F5A623; letter-spacing: 0.08em; text-transform: uppercase; }
+.card-top-banner .ctb-l2 { display: block; font-size: 0.52rem; font-weight: 600; color: #fff; letter-spacing: 0.04em; margin-top: 4px; }
+.card-bot-banner { background: linear-gradient(135deg,#1A4A9B 0%,#0A2A6B 100%); padding: 0.7rem 1rem; text-align: center; border-radius: 0 0 12px 12px; overflow: hidden; }
+.card-bot-banner span { font-size: 0.52rem; font-weight: 700; color: #F5A623; letter-spacing: 0.06em; text-transform: uppercase; }
+.card-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #1a1a1a; overflow: hidden; }
+.card-row-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: #1a1a1a; margin-top: 2px; overflow: hidden; }
+.ad-gold { padding: 10px 9px; min-height: 100px; display: flex; flex-direction: column; gap: 3px; position: relative; }
 .ad-gold-a { background: linear-gradient(135deg,#F5D97A 0%,#F0C040 60%,#E8B820 100%); }
 .ad-gold-b { background: linear-gradient(135deg,#F0C040 0%,#E8B820 60%,#D4A010 100%); }
-.ag-biz { font-size: 0.38rem; font-weight: 700; color: #1A1A1A; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
-.ag-offer { font-size: 0.5rem; font-weight: 800; color: #0A2A6B; line-height: 1.2; margin-top: 2px; }
-.ag-detail { font-size: 0.32rem; font-weight: 400; color: #2C2C2C; line-height: 1.45; margin-top: 3px; }
-.ag-cta { font-size: 0.32rem; font-weight: 700; color: #0A2A6B; margin-top: auto; padding-top: 4px; }
-.ag-reserved { position: absolute; top: 4px; right: 4px; font-size: 0.27rem; font-weight: 700; background: rgba(0,0,0,0.12); color: #1A1A1A; padding: 1px 4px; border-radius: 100px; text-transform: uppercase; }
-.ad-slate { padding: 7px 6px; min-height: 70px; display: flex; flex-direction: column; gap: 2px; }
+.ag-biz { font-size: 0.4rem; font-weight: 700; color: #1A1A1A; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
+.ag-offer { font-size: 0.54rem; font-weight: 800; color: #0A2A6B; line-height: 1.2; margin-top: 3px; }
+.ag-detail { font-size: 0.34rem; font-weight: 400; color: #2C2C2C; line-height: 1.5; margin-top: 4px; }
+.ag-cta { font-size: 0.34rem; font-weight: 700; color: #0A2A6B; margin-top: auto; padding-top: 5px; }
+.ag-reserved { position: absolute; top: 5px; right: 5px; font-size: 0.3rem; font-weight: 700; background: rgba(0,0,0,0.12); color: #1A1A1A; padding: 2px 5px; border-radius: 100px; text-transform: uppercase; white-space: nowrap; }
+.ad-slate { padding: 8px 7px; min-height: 78px; display: flex; flex-direction: column; gap: 2px; }
 .ad-slate-a { background: linear-gradient(135deg,#4A5568 0%,#2D3748 100%); }
 .ad-slate-b { background: linear-gradient(135deg,#3D4A5C 0%,#2A3545 100%); }
-.as-biz { font-size: 0.34rem; font-weight: 700; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
-.as-offer { font-size: 0.4rem; font-weight: 700; color: #fff; line-height: 1.2; margin-top: 1px; }
-.as-detail { font-size: 0.29rem; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.4; margin-top: 2px; }
-.as-cta { font-size: 0.28rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-top: auto; padding-top: 2px; }
+.as-biz { font-size: 0.36rem; font-weight: 700; color: rgba(255,255,255,0.95); letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
+.as-offer { font-size: 0.44rem; font-weight: 700; color: #fff; line-height: 1.2; margin-top: 2px; }
+.as-detail { font-size: 0.31rem; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.4; margin-top: 3px; }
+.as-cta { font-size: 0.3rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-top: auto; padding-top: 3px; }
+.card-chip { position: absolute; top: -12px; right: 0; background: var(--green); color: var(--white); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px; white-space: nowrap; z-index: 5; }
 
 /* MARQUEE */
 .marquee-bar { background: var(--ink); padding: 1rem 0; overflow: hidden; white-space: nowrap; }
@@ -452,45 +453,48 @@ footer { background: var(--ink); padding: 4rem 0 0; }
       <div class="card-row-2">
         <div class="ad-gold ad-gold-a">
           <div class="ag-biz">West Hartford Realty</div>
-          <div class="ag-offer">Thinking of Selling?</div>
-          <div class="ag-detail">Top dollar, fast closings<br>Serving CT since 2003</div>
-          <div class="ag-cta">Free home valuation &rarr;</div>
+          <div class="ag-offer">FREE Home Valuation</div>
+          <div class="ag-detail">Top dollar results, fast closings<br>Trusted CT agent since 2003</div>
+          <div class="ag-cta">Call for your free estimate &rarr;</div>
         </div>
         <div class="ad-gold ad-gold-b">
           <div class="ag-biz">CCJR Junk Removal</div>
-          <div class="ag-offer">$50 OFF Any Cleanout</div>
+          <div class="ag-offer">Save $50 On Any Cleanout</div>
           <div class="ag-detail">Same-day service available<br>Licensed &amp; insured &bull; CT</div>
-          <div class="ag-cta">Call 203-555-0100</div>
+          <div class="ag-cta">Call 860-759-6314</div>
           <div class="ag-reserved">&#10003; Reserved</div>
         </div>
       </div>
       <div class="card-row-4">
         <div class="ad-slate ad-slate-a">
-          <div class="as-biz">Summit Roofing</div>
-          <div class="as-offer">Free Inspection</div>
-          <div class="as-detail">GAF certified<br>Storm specialists</div>
+          <div class="as-biz">Summit Roofing CT</div>
+          <div class="as-offer">FREE Inspection</div>
+          <div class="as-detail">Storm damage?<br>GAF certified pros</div>
           <div class="as-cta">summitroofingct.com</div>
         </div>
         <div class="ad-slate ad-slate-b">
           <div class="as-biz">Classic Cuts</div>
-          <div class="as-offer">$10 OFF 1st Visit</div>
+          <div class="as-offer">50% OFF First Visit</div>
           <div class="as-detail">Walk-ins welcome<br>Mon&ndash;Sat 9&ndash;7pm</div>
-          <div class="as-cta">Book online</div>
+          <div class="as-cta">Book online today</div>
         </div>
         <div class="ad-slate ad-slate-a">
           <div class="as-biz">Trattoria Bella</div>
-          <div class="as-offer">$20 OFF Dinner</div>
-          <div class="as-detail">Authentic Italian<br>Open Tue&ndash;Sun</div>
-          <div class="as-cta">Reserve a table</div>
+          <div class="as-offer">Save $30 Dinner for 2</div>
+          <div class="as-detail">Authentic Italian<br>Open Tue&ndash;Sun 5&ndash;10pm</div>
+          <div class="as-cta">Reserve your table</div>
         </div>
         <div class="ad-slate ad-slate-b">
           <div class="as-biz">Glow Med Spa</div>
-          <div class="as-offer">20% OFF Botox</div>
-          <div class="as-detail">Board-certified<br>West Hartford</div>
+          <div class="as-offer">FREE Consultation</div>
+          <div class="as-detail">Botox, fillers &amp; more<br>Board-certified team</div>
           <div class="as-cta">glowmedspa.com</div>
         </div>
       </div>
-      <div class="card-bot-banner"><span>Scan QR Codes for Exclusive Offers &mdash; Delivered to Your Door</span></div>
+      <div class="card-bot-banner">
+        <span>GET YOUR BUSINESS IN FRONT OF 5,000 AFFLUENT HOMEOWNERS!</span>
+        <span style="display:block;margin-top:3px;font-size:0.46rem;opacity:0.85">Contact: matt@brightclimbmail.com &nbsp;|&nbsp; 203-200-8912</span>
+      </div>
     </div>
   </div>
 </section>
