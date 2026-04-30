@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Loading your West Hartford deals...</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQC9ZPPT');</script>
+<!-- End Google Tag Manager -->
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #0A2A6B 0%, #1A4A9B 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.wrap {
+  text-align: center;
+  padding: 2rem;
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+.logo span { color: #F5A623; }
+.loading-text {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top-color: #F5A623;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.sub-text {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+}
+</style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQC9ZPPT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="wrap">
+  <div class="logo">Bright Climb <span>Mail</span></div>
+  <div class="spinner"></div>
+  <div class="loading-text">Loading your exclusive<br>West Hartford deals...</div>
+  <div class="sub-text">You will be redirected automatically</div>
+</div>
+
+<script>
+// Fire GA4 qr_scan event BEFORE redirecting
+// This records every scan separately from regular page visits
+window.dataLayer = window.dataLayer || [];
+
+window.dataLayer.push({
+  event: 'qr_scan',
+  campaign: 'WH-Summer26',
+  source: 'postcard',
+  town: 'West Hartford'
+});
+
+// Short delay so GTM has time to fire the event before redirect
+// 800ms is enough for GTM to process without feeling slow
+setTimeout(function() {
+  window.location.replace('https://brightclimbmail.com/westhartford');
+}, 800);
+</script>
+
+</body>
+</html>
